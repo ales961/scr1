@@ -31,6 +31,12 @@ SECTIONS {
     *(.text.init) 
   } >RAM
 
+  .text.start 0x400: { 
+    PROVIDE(__TEXT_END__ = .);
+    PROVIDE(__TEXT_START__ = .);
+    *(.text.start) 
+  } >RAM
+
   .text  : {
     *crt.o(.text .text.*)
     *(.text .text.*)
